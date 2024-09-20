@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日完成事項</title>
+</head>
+<body>
+    <div id="text"></div>
+
+    <!-- 每日完成事項的表單 -->
+    <form>
+        <label for="task1">今日完成事項1：</label>
+        <input type="text" id="task1" name="task1"><br><br>
+
+        <label for="task2">今日完成事項2：</label>
+        <input type="text" id="task2" name="task2"><br><br>
+
+        <label for="fileUpload">上傳檔案：</label>
+        <input type="file" id="fileUpload" name="fileUpload"><br><br>
+    </form>
+
+
+<button onClick="show()" class="button-81">執行</button>
+<div id="text"></div>
+
+<script>
+    let msg = ["你今天也好棒喔(灬ºωº灬)", "快要放假了好開心(✿ﾟ▽ﾟ)ノ", "欸欸 要一起來念書嗎(๑•̀ㅂ•́)و✧"];
+	let i = 0;
+	
+		function getRandomColor() {
+		var letters = '0123456789ABCDEF'.split('');
+		var color = '#';
+		for (var i = 0; i < 6; i++ ) {
+			color += letters[Math.floor(Math.random() * 16)];
+		}
+		return color;
+}
+    
+    function show() {
+    	document.getElementById("text").innerHTML = msg[i % 3];
+		document.body.style.backgroundColor = getRandomColor();
+		++i;
+    }
+</script>
+
+<style>
+<!-- HTML !-->
+<button class="button-81" role="button">Button 81</button>
+
+/* CSS */
+.button-81 {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: #0d172a;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 1rem 1.6rem;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  text-decoration-thickness: auto;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-81:hover {
+  background-color: #1e293b;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .button-81 {
+    font-size: 1.125rem;
+    padding: 1rem 2rem;
+  }
+}
+}</style>
